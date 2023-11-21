@@ -108,10 +108,10 @@ main {
 .pokemon-id-back {
     position: absolute;
     top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 55%;
+    transform: translateX(-50%); 
     font-size: 6rem;
-    font-weight: 800;
+    font-weight: 400;
     z-index: -1;
     color: var(--clr-gray);
 }
