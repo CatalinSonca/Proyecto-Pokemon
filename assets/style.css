@@ -22,7 +22,10 @@ button{
 
 body {
     min-height: 100vh;
-    background-color: var(--clr-gray);
+    background-image: url(./img/background.png);
+    background-size: 100%;
+    background-repeat: repeat;
+    background-position: center;
 }
 
 
@@ -38,8 +41,8 @@ header {
     gap: 1rem;
     align-items: flex-start;
     padding-inline: 1rem;
-
 }
+
 
 .nav-list {
     display: flex;
@@ -90,12 +93,25 @@ main {
 }
 
 /* Styles para relación pokemon */
-.pokemon-todos {
+/* .pokemon-todos {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+}  */
+.pokemon-todos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
-.pokemon {
+.pokemon-info {
+    padding: 1rem;
+    flex: 1;
+}
+
+
+
+/* ORIGINAL */
+/* .pokemon {
     border-radius: 1rem;
     background-color: var(--clr-white);
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
@@ -104,7 +120,14 @@ main {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+} */
+.pokemon {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
 }
+
 .pokemon-id-back {
     position: absolute;
     top: 1rem;
@@ -163,6 +186,9 @@ main {
     display: flex;
     gap: 1rem;
     font-size: .85rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .stat {
@@ -269,6 +295,9 @@ main {
 .nav-text-logo {
     width: 16px;
 }
+
+
+
 /* Colores antes de pasar hover */
 .pokemon.normal {
     background-color: rgb(163, 159, 159);
@@ -299,21 +328,48 @@ main {
     color: var(--clr-black);
 }
 
-.pokemon.normal {
+.pokemon.psychic {
     background-color: rgb(163, 159, 159);
     color: var(--clr-black);
 }
 
-.pokemon.normal {
+.pokemon.fairy {
     background-color: rgb(163, 159, 159);
     color: var(--clr-black);
 }
 
-.pokemon.normal {
+.pokemon.dark {
     background-color: rgb(163, 159, 159);
     color: var(--clr-black);
 }
-
+.pokemon.ground {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.poison {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.rock {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.fighting {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.dragon {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.bug {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.ghost {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
 
 
 

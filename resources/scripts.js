@@ -37,13 +37,14 @@ function mostrarPokemon(poke) {
                 ${tipos}
             </div>
             <div class="pokemon-stats">
-                <p class="stat">${poke.height}m</p>
-                <p class="stat">${poke.weight}kg</p>
+                <p class="stat"><b>Altura: </b>${poke.height}M</p>
+                <p class="stat"><b></n>Peso: </b>${poke.weight}kg</p>
+                <p class="stat"><b>Experiencia Base: </b>${poke.base_experience}</p>
+                <p class="stat"><b>Ataque: </b>${poke.stats.find(stat => stat.stat.name === 'attack').base_stat}</p>
+                <p class="pokemon-stat"><b>Habilidad: </b>${poke.abilities[0].ability.name}</p>
             </div>
         </div>
     `;
-    listaPokemon.style.display="grid";
-    listaPokemon.style.gridTemplateColumns = "repeat(auto-fill, minmax(600px, 1fr))";
     listaPokemon.append(div);
 }
 
