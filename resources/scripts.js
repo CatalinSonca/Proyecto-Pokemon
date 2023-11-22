@@ -2,7 +2,7 @@ const listaPokemon = document.querySelector("#listaPokemon");
 const botonesHeader = document.querySelectorAll(".btn-header");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
-for (let i = 1; i <= 151; i++) {
+for (let i = 1; i <= 300; i++) {
     fetch(URL + i)
         .then((response) => response.json())
         .then(data => mostrarPokemon(data))
@@ -22,9 +22,9 @@ function mostrarPokemon(poke) {
 
 
     const div = document.createElement("div");
-    div.classList.add("pokemon");
+    div.classList.add("pokemon", poke.types[0].type.name);
     div.innerHTML = `
-        <p class="pokemon-id-back">#${pokeId}</p>
+    <!--  <p class="pokemon-id-back">#${pokeId}</p> -->
         <div class="pokemon-imagen">
             <img src="${poke.sprites.other["official-artwork"].front_default}" alt="${poke.name}">
         </div>
@@ -42,6 +42,8 @@ function mostrarPokemon(poke) {
             </div>
         </div>
     `;
+    listaPokemon.style.display="grid";
+    listaPokemon.style.gridTemplateColumns = "repeat(auto-fill, minmax(600px, 1fr))";
     listaPokemon.append(div);
 }
 

@@ -110,7 +110,7 @@ main {
     top: 1rem;
     left: 55%;
     transform: translateX(-50%); 
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 400;
     z-index: -1;
     color: var(--clr-gray);
@@ -170,10 +170,19 @@ main {
     padding: .25rem .5rem;
     border-radius: 100vmax;
 }
+/* Estilos de carga */
 
-
-
-
+.pokemon:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, );
+}
+.pokemon:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+.pokemon.hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
 
 
 
@@ -188,27 +197,27 @@ main {
     background-color: rgb(163, 159, 159);
     color: var(--clr-black)
 }
-.fuego{
+.fire{
     background-color: rgb(255,157,85);
     color: var(--clr-black)
 }
-.agua{
+.water{
     background-color: rgb(80,144,214);
     color: var(--clr-black)
 }
-.planta{
+.grass{
     background-color:rgb(99,188,90);
     color: var(--clr-black)
 }
-.electrico{
+.electric{
     background-color: rgb(244,210,60);
     color: var(--clr-black)
 }
-.hielo{
+.ice{
     background-color: rgb(115,206,192);
     color: var(--clr-black)
 }
-.luchador{
+.fighting{
     background-color: rgb(206,65,107);
     color: var(--clr-black)
 }
@@ -216,27 +225,27 @@ main {
     background-color: rgb(181,103,206);
     color: var(--clr-black)
 }
-.tierra{
+.ground{
     background-color: rgb(217,120,69);
     color: var(--clr-black)
 }
-.psiquico{
+.psychic{
     background-color: rgb(250,113,121);
     color: var(--clr-black)
 }
-.insecto{
+.bug{
     background-color: rgb(145,193,47);
     color: var(--clr-black)
 }
-.roca{
+.rock{
     background-color: rgb(197,183,140);
     color: var(--clr-black)
 }
-.fantasma{
+.ghost{
     background-color: rgb(82,105,173);
     color: var(--clr-black)
 }
-.siniestro{
+.dark{
     background-color: rgb(90,84,101);
     color: var(--clr-black)
 }
@@ -244,22 +253,145 @@ main {
     background-color: rgb(11,109,195);
     color: var(--clr-black)
 }
-.acero{
+.steel{
     background-color: rgb(90,142,162);
     color: var(--clr-black)
 }
-.hada{
+.fairy{
     background-color: rgb(236,143,230);
     color: var(--clr-black)
 }
 
-.volador{
+.fliying{
     background-color: rgb(156,182,232);
     color: var(--clr-black);
 }
 .nav-text-logo {
     width: 16px;
 }
+/* Colores antes de pasar hover */
+.pokemon.normal {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+.pokemon.fire {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.water {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.grass {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.electric {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.ice {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.normal {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.normal {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
+
+.pokemon.normal {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+}
 
 
 
+
+
+/* Colores hover */
+.pokemon.normal:hover {
+    background-color: rgb(163, 159, 159);
+    color: var(--clr-black);
+    
+}
+
+.pokemon.fire:hover{
+    background-color: rgb(255,157,85);
+    color: var(--clr-black)
+}
+.pokemon.water:hover{
+    background-color: rgb(80,144,214);
+    color: var(--clr-black)
+    
+}
+.pokemon.grass:hover{
+    background-color:rgb(99,188,90);
+    color: var(--clr-black)
+}
+.pokemon.electric:hover{
+    background-color: rgb(244,210,60);
+    color: var(--clr-black)
+}
+.pokemon.ice:hover{
+    background-color: rgb(115,206,192);
+    color: var(--clr-black)
+}
+.pokemon.fighting:hover{
+    background-color: rgb(206,65,107);
+    color: var(--clr-black)
+}
+.pokemon.poison:hover{
+    background-color: rgb(181,103,206);
+    color: var(--clr-black)
+}
+.pokemon.ground:hover{
+    background-color: rgb(217,120,69);
+    color: var(--clr-black)
+}
+.pokemon.psychic:hover{
+    background-color: rgb(250,113,121);
+    color: var(--clr-black)
+}
+.pokemon.bug:hover{
+    background-color: rgb(145,193,47);
+    color: var(--clr-black)
+}
+.pokemon.rock:hover{
+    background-color: rgb(197,183,140);
+    color: var(--clr-black)
+}
+.pokemon.ghost:hover{
+    background-color: rgb(82,105,173);
+    color: var(--clr-black)
+}
+.pokemon.dark:hover{
+    background-color: rgb(90,84,101);
+    color: var(--clr-black)
+}
+.pokemon.dragon:hover{
+    background-color: rgb(11,109,195);
+    color: var(--clr-black)
+}
+.pokemon.steel:hover{
+    background-color: rgb(90,142,162);
+    color: var(--clr-black)
+}
+.pokemon.fairy:hover{
+    background-color: rgb(236,143,230);
+    color: var(--clr-black)
+}
+
+.pokemon.fliying:hover{
+    background-color: rgb(156,182,232);
+    color: var(--clr-black);
+}
