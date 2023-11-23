@@ -2,7 +2,7 @@ const listaPokemon = document.querySelector("#listaPokemon");
 const botonesHeader = document.querySelectorAll(".btn-header");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
-for (let i = 1; i <= 300; i++) {
+for (let i = 1; i <= 151; i++) {
     fetch(URL + i)
         .then((response) => response.json())
         .then(data => mostrarPokemon(data))
@@ -37,11 +37,11 @@ function mostrarPokemon(poke) {
                 ${tipos}
             </div>
             <div class="pokemon-stats">
-                <p class="stat"><b>Altura: </b>${poke.height}M</p>
-                <p class="stat"><b></n>Peso: </b>${poke.weight}kg</p>
-                <p class="stat"><b>Experiencia Base: </b>${poke.base_experience}</p>
-                <p class="stat"><b>Ataque: </b>${poke.stats.find(stat => stat.stat.name === 'attack').base_stat}</p>
-                <p class="pokemon-stat"><b>Habilidad: </b>${poke.abilities[0].ability.name}</p>
+                <p class="stat"><b>Altura:&nbsp; </b>${poke.height}&nbsp;Ft</p>
+                <p class="stat"><b></n>Peso:&nbsp; </b>${poke.weight}&nbsp;Lb</p>
+                <p class="stat"><b>Experiencia Base: &nbsp;</b>${poke.base_experience}</p>
+                <p class="stat"><b>Ataque: &nbsp; </b>${poke.stats.find(stat => stat.stat.name === 'attack').base_stat}</p>
+                <p class="stat"><b>Habilidad:&nbsp; </b>${poke.abilities[0].ability.name}</p>
             </div>
         </div>
     `;

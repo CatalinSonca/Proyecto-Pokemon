@@ -7,10 +7,35 @@
     color: var(--clr-black);
     font-family: 'Rubik', sans-serif;
 }
+/* Container Logo y titulo */
+.logo-img {
+    width: 5%;
+}
+.logo-titulo-img {
+    width: 20%;
+}
+
+.container {
+    display: inline-flex;
+    padding: 1rem;
+    background-color: black;
+}
+
+
+.container h1{
+    font-family:  'Rubik', sans-serif;
+    color: white;
+
+}
+
+
+
+
 
 ul {
     list-style: none;
 }
+
 
 button{
     background-color: transparent;
@@ -22,10 +47,8 @@ button{
 
 body {
     min-height: 100vh;
-    background-image: url(./img/background.png);
-    background-size: 100%;
-    background-repeat: repeat;
-    background-position: center;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 
 
@@ -139,13 +162,13 @@ main {
     color: var(--clr-gray);
 }
 .pokemon-imagen {
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     display: flex;
     justify-content: center;
 }
 .pokemon-imagen img {
     width: 100%;
-    max-width: 6rem;
+    max-width: 8rem;
 }
 
 .pokemon-info {
@@ -165,7 +188,7 @@ main {
 }
 
 .pokemon-nombre {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .pokemon-tipos {
@@ -180,6 +203,8 @@ main {
 .tipo {
     padding: .25rem .5rem;
     border-radius: 100vmax;
+    border-color: white;
+    border-style: solid ;
 }
 
 .pokemon-stats {
@@ -188,6 +213,8 @@ main {
     font-size: .85rem;
     flex-wrap: wrap;
     justify-content: center;
+    
+
 
 }
 
@@ -195,20 +222,20 @@ main {
     background-color: var(--clr-gray);
     padding: .25rem .5rem;
     border-radius: 100vmax;
+    
 }
 /* Estilos de carga */
-
+/* TRABAJAR MAS EN LAS TARJETAS */
 .pokemon:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, );
+    border-color: aliceblue;
+    border-style: solid;
 }
 .pokemon:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
+    transform: scale(1.2);
+    transition: transform 0.8s ease-in-out;
 }
-.pokemon.hover:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
+
 
 
 
@@ -300,74 +327,74 @@ main {
 
 /* Colores antes de pasar hover */
 .pokemon.normal {
-    background-color: rgb(163, 159, 159);
+    background-color:white;
     color: var(--clr-black);
 }
 .pokemon.fire {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.water {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.grass {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.electric {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.ice {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.psychic {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.fairy {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
 .pokemon.dark {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.ground {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.poison {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.rock {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.fighting {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.dragon {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.bug {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 .pokemon.ghost {
-    background-color: rgb(163, 159, 159);
+    background-color: white;
     color: var(--clr-black);
 }
 
