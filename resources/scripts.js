@@ -2,7 +2,7 @@ const listaPokemon = document.querySelector("#listaPokemon");
 const botonesHeader = document.querySelectorAll(".btn-header");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
-for (let i = 1; i <= 4000; i++) {
+for (let i = 1; i <= 151; i++) {
     fetch(URL + i)
         .then((response) => response.json())
         .then(data => mostrarPokemon(data))
@@ -20,7 +20,7 @@ function mostrarPokemon(poke) {
         pokeId = "0" + pokeId;
     }
 
-
+// Html generado por cada pokemon
     const div = document.createElement("div");
     div.classList.add("pokemon", poke.types[0].type.name);
     div.innerHTML = `
@@ -40,7 +40,7 @@ function mostrarPokemon(poke) {
                 <p class="stat"><b>Altura:&nbsp; </b>${poke.height}&nbsp;Ft</p>
                 <p class="stat"><b></n>Peso:&nbsp; </b>${poke.weight}&nbsp;Lb</p>
                 <p class="stat"><b>Experiencia Base: &nbsp;</b>${poke.base_experience}</p>
-                <p class="stat"><b>Ataque: &nbsp; </b>${poke.stats.find(stat => stat.stat.name === 'attack').base_stat}</p>
+                <p class="stat"><b>Ataque: &nbsp; </b>${poke.stats.find(stat => stat.stat.name === 'attack').base_stat} Dmg</p>
                 <p class="stat"><b>Habilidad:&nbsp; </b>${poke.abilities[0].ability.name}</p>
             </div>
         </div>
@@ -53,7 +53,7 @@ botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
 
     listaPokemon.innerHTML = "";
 
-    for (let i = 1; i <= 4000; i++) {
+    for (let i = 1; i <= 500; i++) {
         fetch(URL + i)
             .then((response) => response.json())
             .then(data => {
@@ -70,3 +70,38 @@ botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
             })
     }
 }))
+
+
+//Barra de busqueda pokemon
+const buscador = document.getElementById('buscador');
+// llamada a la api
+async function fetchPokemonNames() {
+    try {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500');
+        const data = await response.json();
+        return data.results.map(pokemon => pokemon.name);
+    } catch (error) {
+        console.error('Error al obtener la lista de nombres de Pokémon:', error);
+        return [];
+    }
+}
+function showPredictions(inputValue, allPokemonNames) {
+    const filteredNames = allPokemonNames.filter(name => name.includes(inputValue));
+
+    // Limpiar la lista de Pokémon existente
+    listaPokemon.innerHTML = "";
+
+    // Mostrar solo los Pokémon filtrados
+    filteredNames.forEach(async (pokemonName) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        const data = await response.json();
+        mostrarPokemon(data);
+    });
+}
+
+buscador.addEventListener('input', async function () {
+    const inputValue = buscador.value.toLowerCase();
+
+    const allPokemonNames = await fetchPokemonNames();
+    showPredictions(inputValue, allPokemonNames);
+});

@@ -1,15 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
+@font-face {
+    font-family: 'PokemonGb-RAeo';
+    src: url("./fonts/PokemonGb-RAeo.ttf");
+}
+/* Media Screen */
+
+/* Pantallas pequeñas */
+@media screen and (max-width: 767px) {
+    .pokemon:hover {
+        transform: none;
+    }
+}
+@media screen and (min-width: 470px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: var(--clr-black);
-    font-family: 'Rubik', sans-serif;
+    font-family: 'PokemonGb-RAeo';
 }
+
+footer{
+    border: solid .11rem;
+    margin-top: 1%;
+}
+
+
 /* Container Logo y titulo */
 .logo-img {
     width: 5%;
+    
 }
 .logo-titulo-img {
     width: 20%;
@@ -18,18 +50,14 @@
 .container {
     display: inline-flex;
     padding: 1rem;
-    background-color: black;
+    justify-content: center;
 }
-
-
-.container h1{
-    font-family:  'Rubik', sans-serif;
-    color: white;
-
+#buscador{
+    padding: 8px;
+    font-size: 16px;
+    width: 300px;
+    border-radius: 0.25rem;
 }
-
-
-
 
 
 ul {
@@ -46,6 +74,7 @@ button{
 }
 
 body {
+    font-family: "PokemonGb-RAeo";
     min-height: 100vh;
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
@@ -54,18 +83,23 @@ body {
 
 header {
     padding-block: 1rem;
-    box-shadow: 0 0 2rem -1rem rgba(0,0,0,.5)
-
+    box-shadow: 0 0 2rem -1rem rgba(0,0,0,.5);
 }
 
 .nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     align-items: flex-start;
     padding-inline: 1rem;
+    flex-wrap: wrap;
 }
 
+.nav h3 {
+    color: white;
+    position: relative;
+    margin: auto 0;
+}
 
 .nav-list {
     display: flex;
@@ -103,24 +137,8 @@ main {
     padding: 2rem;
 }
 /* Media Screens */
-@media screen and (min-width: 470px) {
-    .pokemon-todos {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media screen and (min-width: 700px) {
-    .pokemon-todos {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
 
-/* Styles para relación pokemon */
-/* .pokemon-todos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}  */
 .pokemon-todos{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -131,24 +149,13 @@ main {
     flex: 1;
 }
 
-
-
-/* ORIGINAL */
-/* .pokemon {
-    border-radius: 1rem;
-    background-color: var(--clr-white);
-    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
-    padding-block: 1rem;
-    text-transform: uppercase;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-} */
 .pokemon {
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 
 .pokemon-id-back {
@@ -183,12 +190,12 @@ main {
     background-color: var(--clr-gray);
     padding: .25rem .5rem;
     border-radius: 100vmax;
-    font-size: .75rem;
+    font-size: .9rem;
     font-weight: 500;
 }
 
 .pokemon-nombre {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .pokemon-tipos {
@@ -213,6 +220,7 @@ main {
     font-size: .85rem;
     flex-wrap: wrap;
     justify-content: center;
+    font-family: sans-serif;
     
 
 
@@ -224,26 +232,17 @@ main {
     border-radius: 100vmax;
     
 }
-/* Estilos de carga */
-/* TRABAJAR MAS EN LAS TARJETAS */
-.pokemon:hover {
+
+.pokemon:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, );
-    border-color: aliceblue;
+    border-color: yellow;
     border-style: solid;
-}
-.pokemon:hover {
+    border-radius: 15px;
+    border-width: 4px;
+    transition: transform 0.5s ease-in-out;
     transform: scale(1.2);
-    transition: transform 0.8s ease-in-out;
+    z-index: 3;
 }
-
-
-
-
-
-
-
-
-
 
 /* Colores de los botones en NAV */
 .normal{
@@ -394,6 +393,10 @@ main {
     color: var(--clr-black);
 }
 .pokemon.ghost {
+    background-color: white;
+    color: var(--clr-black);
+}
+.pokemon.steel {
     background-color: white;
     color: var(--clr-black);
 }
